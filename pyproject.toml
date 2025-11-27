@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "binwalk-python-sdk"
+version = "0.0.1"
+description = "Python bindings for running binwalk"
+authors = ["pUrGe12 <achintya.jai@owasp.org>"]
+license = "MIT"
+readme = "README.md"
+classifiers = [
+    "Programming Language :: Python :: 3.10",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent"
+]
+
+[tool.poetry.dependencies]
+python = ">=3.10"
+maturin = "^1.10.2"
+patchelf = "^0.17.2.4"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.maturin]
+manifest-path = "rust/Cargo.toml"

@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "binwalk-python-sdk"
-version = "0.0.1"
+version = "0.1.0"
 description = "Python bindings for running binwalk"
 authors = ["pUrGe12 <achintya.jai@owasp.org>"]
 license = "MIT"
@@ -14,11 +14,10 @@ classifiers = [
 
 [tool.poetry.dependencies]
 python = ">=3.10"
-maturin = "^1.10.2"
-patchelf = "^0.17.2.4"
 
 [tool.poetry.group.dev.dependencies]
 maturin = "^1.10.2"
+patchelf = "^0.17.2.4"
 
 [tool.isort]
 profile = "black"
@@ -40,8 +39,9 @@ quote-style = "double"
 indent-style = "space"
 
 [build-system]
-requires = ["poetry-core>=2.0.0,<3.0.0"]
-build-backend = "poetry.core.masonry.api"
+requires = ["maturin>=1.0,<2.0"]
+build-backend = "maturin"
 
 [tool.maturin]
 manifest-path = "rust/Cargo.toml"
+module-name = "pybinwalk._rust"

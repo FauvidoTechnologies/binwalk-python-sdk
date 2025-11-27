@@ -45,7 +45,7 @@ fn basic_scan(path: String) -> PyResult<String> {
 
 /// Expose
 #[pymodule]
-fn rust(m: &Bound<'_, PyModule>) -> PyResult<()> {
+fn _rust(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(basic_scan, m)?)?;
     Ok(())
 }

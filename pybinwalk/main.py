@@ -1,6 +1,6 @@
 import json
 
-import rust
+from pybinwalk import _rust
 
 
 # The basic scan type
@@ -13,5 +13,5 @@ def basic_scan(image_path: str):
     returns:
             A JSON list of all scan elements
     """
-    result = rust.basic_scan(image_path)
+    result = _rust.basic_scan(image_path)
     return json.loads(result)

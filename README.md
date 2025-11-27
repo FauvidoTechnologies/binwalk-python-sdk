@@ -30,6 +30,6 @@ from pybinwalk import basic_scan
 
 result = basic_scan(image_path)
 print(type(result))
-# Dict
+# List
 
 ```

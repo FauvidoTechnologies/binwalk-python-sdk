@@ -43,6 +43,35 @@ fn basic_scan(path: String) -> PyResult<String> {
     Ok(json_output)
 }
 
+#[pyfuncton]
+fn extract(path: String, output_path: String) -> PyResult<String> {
+    /*
+    Extract endpoint for binwalk
+
+    Args:
+        `path`: Path of the input file to binwalk
+        `output_path`: Path of the output directory to save the results to
+
+        Both of those are expected to be strings (else we can do `.to_string()` here just to be safe)
+    */
+
+    // Starting with reading the file
+    let file_data = fs::read(&path).map_err(|e| {
+        PyErr::new::<pyo3::exceptions::PyIOError, _>(format!("Failed to read file: {}", e))
+    })?;
+
+    let scan_results = basic_scan(&file_data);
+
+
+    let binwalker = Binwalk::configure();
+
+
+    let mut results; Vec<SignatureResultJson> = Vec::new();
+
+
+
+}
+
 /// Expose
 #[pymodule]
 fn _rust(m: &Bound<'_, PyModule>) -> PyResult<()> {

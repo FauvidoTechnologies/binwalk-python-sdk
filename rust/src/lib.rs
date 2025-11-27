@@ -14,7 +14,7 @@ struct SignatureResultJson {
 }
 
 #[pyfunction]
-fn scan_firmware(path: String) -> PyResult<String> {
+fn basic_scan(path: String) -> PyResult<String> {
     let binwalker = Binwalk::new();
 
     let file_data = fs::read(&path).map_err(|e| {
@@ -46,6 +46,6 @@ fn scan_firmware(path: String) -> PyResult<String> {
 /// Expose
 #[pymodule]
 fn rust(m: &Bound<'_, PyModule>) -> PyResult<()> {
-    m.add_function(wrap_pyfunction!(scan_firmware, m)?)?;
+    m.add_function(wrap_pyfunction!(basic_scan, m)?)?;
     Ok(())
 }

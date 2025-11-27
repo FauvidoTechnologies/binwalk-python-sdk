@@ -5,6 +5,7 @@ description = "Python bindings for running binwalk"
 authors = ["pUrGe12 <achintya.jai@owasp.org>"]
 license = "MIT"
 readme = "README.md"
+packages = [{include = "pybinwalk"}]
 classifiers = [
     "Programming Language :: Python :: 3.10",
     "License :: OSI Approved :: MIT License",
@@ -15,6 +16,28 @@ classifiers = [
 python = ">=3.10"
 maturin = "^1.10.2"
 patchelf = "^0.17.2.4"
+
+[tool.poetry.group.dev.dependencies]
+maturin = "^1.10.2"
+
+[tool.isort]
+profile = "black"
+line_length = 99
+multi_line_output = 3
+include_trailing_comma = true
+force_grid_wrap = 0
+use_parentheses = true
+known_first_party = ["pyba"]
+no_inline_sort = true
+skip = ["__init__.py"]
+
+[tool.ruff]
+line-length = 99
+per-file-ignores = { "__init__.py" = ["ALL"]}
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]

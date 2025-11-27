@@ -23,13 +23,13 @@ pip install -e .
 
 ## Usage
 
-We're currently exposing just one endpoint, which is `scan_firmware`. This is equivalent to doing `binwalk.scan(&data)` in the rust counterpart.
+We're currently exposing just one endpoint, which is `basic_scan`. This is equivalent to doing `binwalk.scan(&data)` in the rust counterpart (or `binwalk filename`).
 
 ```py
-import json
-from pybinwalk import scan_firmware
+from pybinwalk import basic_scan
 
-def scan(image_path):
-	result = scan_firmware(image_path)
-	return json.loads(result)
+result = basic_scan(image_path)
+print(type(result))
+# Dict
+
 ```

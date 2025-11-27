@@ -6,7 +6,7 @@ version = "1.10.2"
 description = "Build and publish crates with pyo3, cffi and uniffi bindings as well as rust binaries as python packages"
 optional = false
 python-versions = ">=3.7"
-groups = ["main"]
+groups = ["main", "dev"]
 files = [
     {file = "maturin-1.10.2-py3-none-linux_armv6l.whl", hash = "sha256:11c73815f21a755d2129c410e6cb19dbfacbc0155bfc46c706b69930c2eb794b"},
     {file = "maturin-1.10.2-py3-none-macosx_10_12_x86_64.macosx_11_0_arm64.macosx_10_12_universal2.whl", hash = "sha256:7fbd997c5347649ee7987bd05a92bd5b8b07efa4ac3f8bcbf6196e07eb573d89"},
@@ -59,7 +59,7 @@ version = "2.3.0"
 description = "A lil' TOML parser"
 optional = false
 python-versions = ">=3.8"
-groups = ["main"]
+groups = ["main", "dev"]
 markers = "python_full_version < \"3.11.0\""
 files = [
     {file = "tomli-2.3.0-cp311-cp311-macosx_10_9_x86_64.whl", hash = "sha256:88bd15eb972f3664f5ed4b57c1634a97153b4bac4479dcb6a495f41921eb7f45"},
@@ -109,4 +109,4 @@ files = [
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.10"
-content-hash = "882dda3482b51dcd569b5918fae522e24c996cb5a3ae1e8e3b4568f8bbd4d67d"
+content-hash = "34b2ab86ae9c57cdf1ddbe64077ab34775614fabf3951fbc1a0cec1b1cb0a36a"

@@ -10,7 +10,7 @@ This is a python SDK for using Binwalk (which is now a Rust project). You can in
 #### Install via pip
 
 ```sh
-pip install binwalk-python
+pip install binwalk-python-sdk
 ```
 
 #### or build it from this repo

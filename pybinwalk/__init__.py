@@ -1,1 +1,2 @@
-from pybinwalk.main import basic_scan
+from pybinwalk.main import scan
+from pybinwalk.main import extract

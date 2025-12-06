@@ -3,8 +3,7 @@ import json
 from pybinwalk import _rust
 
 
-# The basic scan type
-def basic_scan(image_path: str):
+def scan(image_path: str):
     """
     Function to perform a basic binwalk scan.
 
@@ -13,5 +12,22 @@ def basic_scan(image_path: str):
     returns:
             A JSON list of all scan elements
     """
-    result = _rust.basic_scan(image_path)
+    result = _rust.scan(image_path)
+    return json.loads(result)
+
+
+def extract(image_path: str, output_path: str = None):
+    """
+    Function to extract data into a specified directory
+
+    `equivalent CLI command`: binwalk -e image_path
+
+    Args:
+        `image_path`: Path to the image file
+        `output_dir`: The output directory to save the extracted contents too
+    """
+    if not output_path:
+        output_path = "/tmp/binwalk-extraction"
+
+    result = _rust.extract(image_path, output_path)
     return json.loads(result)

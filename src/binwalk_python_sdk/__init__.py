@@ -1,10 +1,9 @@
 import json
 
-from pybinwalk import _rust
+from binwalk_python_sdk._rust import basic_scan
 
 
-# The basic scan type
-def basic_scan(image_path: str):
+def basic_scan_py(image_path: str):
     """
     Function to perform a basic binwalk scan.
 
@@ -13,5 +12,9 @@ def basic_scan(image_path: str):
     returns:
             A JSON list of all scan elements
     """
-    result = _rust.basic_scan(image_path)
+    result = basic_scan(image_path)
     return json.loads(result)
+
+
+def main() -> None:
+    print("Binwalk Python SDK - Use basic_scan_py() to scan files")

@@ -1,6 +1,5 @@
-from setuptools import setup, find_packages
-
 from pybinwalk.version import version
+from setuptools import setup, find_packages
 
 setup(
     name="pybinwalk",

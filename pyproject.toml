@@ -1,23 +1,29 @@
-[tool.poetry]
+[project]
 name = "binwalk-python-sdk"
 version = "0.1.0"
 description = "Python bindings for running binwalk"
-authors = ["pUrGe12 <achintya.jai@owasp.org>"]
+authors = [
+    { name = "pUrGe12", email = "achintya.jai@owasp.org" }
+]
 license = "MIT"
 readme = "README.md"
-packages = [{include = "pybinwalk"}]
+dependencies = []
 classifiers = [
     "Programming Language :: Python :: 3.10",
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent"
 ]
 
-[tool.poetry.dependencies]
-python = ">=3.10"
+[project.scripts]
+binwalk-python-sdk = "binwalk_python_sdk:main"
 
-[tool.poetry.group.dev.dependencies]
-maturin = "^1.10.2"
-patchelf = "^0.17.2.4"
+[tool.maturin]
+module-name = "binwalk_python_sdk._rust"
+python-packages = ["binwalk_python_sdk"]
+python-source = "src"
+
+[tool.uv]
+cache-keys = [{ file = "pyproject.toml" }, { file = "src/**/*.rs" }, { file = "Cargo.toml" }, { file = "Cargo.lock" }]
 
 [tool.isort]
 profile = "black"
@@ -28,7 +34,7 @@ force_grid_wrap = 0
 use_parentheses = true
 known_first_party = ["pyba"]
 no_inline_sort = true
-skip = ["__init__.py"]
+skip = ["__init__.py", ".venv"]
 
 [tool.ruff]
 line-length = 99
@@ -41,7 +47,3 @@ indent-style = "space"
 [build-system]
 requires = ["maturin>=1.0,<2.0"]
 build-backend = "maturin"
-
-[tool.maturin]
-manifest-path = "rust/Cargo.toml"
-module-name = "pybinwalk._rust"

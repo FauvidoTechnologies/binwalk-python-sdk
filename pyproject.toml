@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "binwalk-python-sdk"
-version = "0.1.0"
-description = "Python bindings for running binwalk"
+version = "0.1.2"
+description = "Python library for running binwalk"
 authors = ["pUrGe12 <achintya.jai@owasp.org>"]
 license = "MIT"
 readme = "README.md"

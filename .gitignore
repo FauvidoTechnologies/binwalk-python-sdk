@@ -4,8 +4,7 @@ __pycache__/
 *.py[codz]
 *$py.class
 
-docs/
-
+work.md
 # C extensions
 *.so
 

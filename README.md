@@ -21,15 +21,33 @@ cd binwalk-python-sdk
 pip install -e .
 ```
 
-## Usage
+## Quickstart
 
-We're currently exposing just one endpoint, which is `basic_scan`. This is equivalent to doing `binwalk.scan(&data)` in the rust counterpart (or `binwalk filename`).
+1. Run a basic scan using the `scan` endpoint:
 
 ```py
-from pybinwalk import basic_scan
+from pybinwalk import scan
 
 result = basic_scan(image_path)
 print(type(result))
 # List
+```
 
+2. Run an `extraction` on a binary and save the results to a specified directory:
+
+```py
+from pybinwalk import extract
+
+in_bin = "/path/to/input/binary"
+out_dir = "/path/to/output/DIR"
+
+result = extract(in_bin, out_dir)
+```
+
+3. Install dependencies for your OS (currently supports Ubuntu) using the `Manager`:
+
+```py
+from pybinwalk import Manager
+
+Manager(stream=True).handle_deps()		# This produces a verbose streaming log as it installs all dependencies
 ```

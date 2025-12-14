@@ -37,6 +37,7 @@ class Manager:
             subprocess.run(["chmod", "+x", f"{str(self.ubuntu_sh)}"])
 
         if not self.stream:
+            # This is not recommended
             with subprocess.Popen(
                 f"{str(self.ubuntu_sh)}",
                 shell=True,
@@ -50,5 +51,6 @@ class Manager:
                     print(err)
         else:
             subprocess.run(
-                f"{str(self.ubuntu_sh)}"
+                ["sudo", self.ubuntu_sh],
+                check=True,
             )  # Just run the script without capturing output

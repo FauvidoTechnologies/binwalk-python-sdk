@@ -1,7 +1,9 @@
 [package]
 name = "binwalk-python-sdk"
-version = "0.1.2"
+version = "0.1.3"
 edition = "2021"
+description = "Python library for running binwalk"
+readme = "README.md"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 [lib]

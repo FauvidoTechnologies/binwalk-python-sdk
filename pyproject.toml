@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "binwalk-python-sdk"
-version = "0.1.2"
+version = "0.1.3"
 description = "Python library for running binwalk"
 authors = ["pUrGe12 <achintya.jai@owasp.org>"]
 license = "MIT"
